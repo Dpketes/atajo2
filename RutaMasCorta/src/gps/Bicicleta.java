@@ -15,15 +15,22 @@ public class Bicicleta {
     
     public static String rutaCorta(int [] camino1, int [] camino2, int [] camino3)
     {
+        int x=0,c=0;
         int sum1 = 0;
         int sum2 = 0;
         int sum3 = 0;
         
-        for(int i=0; i<camino1.length; i++)
+        for(int i=0; i<camino3.length; i++)
         {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
             sum3 += camino3[i];
+            if (x < camino1.length){
+                sum1 += camino1[x];
+                x++;
+            }
+            if (c < camino2.length) {
+                sum2 += camino2[c];
+                c++;
+            }
         }
         
         if(sum1 < sum2 && sum1 < sum3)
